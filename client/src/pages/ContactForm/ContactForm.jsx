@@ -1,17 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Link,
-  Navigate,
-  redirect,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import FileBase from "react-file-base64";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import ContactsBar from "../components/ContactsBar";
-import { createContact, editContact } from "../actions/contactsAction";
+import ContactsBar from "../../components/ContactsBar/ContactsBar";
+import { createContact, editContact } from "../../actions/contactsAction";
 import { CountryDropdown } from "react-country-region-selector";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -19,7 +13,7 @@ import "react-phone-input-2/lib/style.css";
 const validationSchema = yup.object().shape({
   firstName: yup.string().required("Required"),
   lastName: yup.string().required("Required"),
-  phoneNumber: yup.string().required("Required").max(10),
+  phoneNumber: yup.string().required("Required").max(11),
   birthday: yup.string().required("Required"),
   address: yup.string().required("Required"),
   country: yup.string().required("Required"),
@@ -68,7 +62,9 @@ const ContactForm = () => {
 
   const onSubmit = (values) => {
     console.log("values", values);
-    id ? dispatch(editContact(values, id)) : dispatch(createContact(values));
+    id
+      ? dispatch(editContact({ id, ...values }, id))
+      : dispatch(createContact(values));
     navigate("/");
   };
 
@@ -135,7 +131,7 @@ const ContactForm = () => {
             Number phone
           </label>
           <PhoneInput
-            id="phoneNumber"
+            id={"phoneNumber"}
             country="fr"
             value={values.phoneNumber}
             onChange={(phoneNumber) =>

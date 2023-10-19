@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
   return (
     <div className="fixed top-0 w-full bg-green-700 text-white">

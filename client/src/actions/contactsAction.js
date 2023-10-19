@@ -18,7 +18,7 @@ export const getContacts = () => async (dispatch) => {
 export const createContact = (contact) => async (dispatch) => {
   try {
     const { data } = await axios.post(url, contact);
-
+    
     dispatch({ type: "CREATE_CONTACT", payload: data.contact });
   } catch (error) {
     console.log(error.message);

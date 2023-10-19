@@ -4,9 +4,9 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaBirthdayCake, FaCity, FaAddressBook } from "react-icons/fa";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import ContactsBar from "../components/ContactsBar";
-import { editContact } from "../actions/contactsAction";
-import PopupDelete from "../components/PopupDelete";
+import ContactsBar from "../../components/ContactsBar/ContactsBar";
+import { editContact } from "../../actions/contactsAction";
+import PopupDelete from "../../components/PopupDelete/PopupDelete";
 
 const ContactDetails = () => {
   const [showModal, setShowModal] = useState(false);

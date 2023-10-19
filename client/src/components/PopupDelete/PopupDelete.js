@@ -2,12 +2,12 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { deleteContact } from "../actions/contactsAction";
+import { deleteContact } from "../../actions/contactsAction";
 
 const PopupDelete = ({ setShowModal, id }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(id);
+ 
 
   const handleClickDelete = () => {
     dispatch(deleteContact(id));

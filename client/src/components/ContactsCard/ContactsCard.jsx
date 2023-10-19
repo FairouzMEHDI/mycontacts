@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { editContact } from "../actions/contactsAction";
+import { editContact } from "../../actions/contactsAction";
 import { useDispatch } from "react-redux";
 
 const ContactsCard = ({
@@ -11,6 +11,7 @@ const ContactsCard = ({
   selectAllClicked,
   contactsToDelete,
 }) => {
+  
   const dispatch = useDispatch();
   const handleFavorite = () => {
     dispatch(editContact({ ...contact, favorite: !favorite }, id));

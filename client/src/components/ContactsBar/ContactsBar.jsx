@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import ContactsCard from "./ContactsCard";
+import { Link } from "react-router-dom";
 import { AiOutlineUserAdd, AiOutlineSearch } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { Link } from "react-router-dom";
-import PopupDelete from "./PopupDelete";
+import ContactsCard from "../ContactsCard/ContactsCard";
+import PopupDelete from "../PopupDelete/PopupDelete";
 
 const ContactsBar = ({ contacts }) => {
   const [showModal, setShowModal] = useState(false);
